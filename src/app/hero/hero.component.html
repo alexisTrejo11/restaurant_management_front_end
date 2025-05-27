@@ -1,0 +1,63 @@
+<div class="home-container">
+    <app-header/>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title ">Bella Vista</h1>
+            <p class="hero-subtitle">Where Culinary Art Meets Exceptional Experience</p>
+            <div class="hero-buttons">
+                <button routerLink="/menu" class="btn btn-primary">View Menu</button>
+                <button routerLink="/reservation" class="btn btn-secondary">Make Reservation</button>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="image-placeholder"></div>
+        </div>
+    </section>
+
+    <!--Restaurant Section-->
+    <section class="restaurant-info">
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-card">
+                    <h2>Our Story</h2>
+                    <p>Description..........</p>
+                </div>
+
+              <div class="info-card">
+                <h2>Specialties</h2>
+                <div class="specialties">
+                  @for (specialty of restaurantInfo?.specialties; track specialty) {
+                  <span class="specialty-tag">
+                    {{ specialty }}
+                  </span>
+                  }
+                </div>
+              </div>
+            
+
+              <div class="info-card">
+                <h2>Visit Us</h2>
+                <p class="address">{{ restaurantInfo?.address }}</p>
+                <p class="contact">{{ restaurantInfo?.phone }}</p>
+                <p class="contact">{{ restaurantInfo?.email }}</p>
+              </div>
+              
+              <div class="info-card">
+                <h2>Hours</h2>
+                <div class="hours">
+                  @for (hour of getHoursArray(); track hour.day) {
+                    <div class="hour-item">
+                      <span class="day"> {{ hour.day }}</span>
+                      <span class="time"> {{ hour.time }} </span>
+                    </div>
+                  }
+                </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <app-footer/>
+</div>

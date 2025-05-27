@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-import { HeaderComponent } from './shared/header/header.component';
-import { FooterComponent } from './shared/footer/footer.component';
+import { HeroComponent } from './hero/hero.component';
 
 @Component({
   selector: 'app-root',
-  imports: [HeaderComponent, FooterComponent],
+  imports: [HeroComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
