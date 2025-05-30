@@ -1,0 +1,88 @@
+<div class="menu-container">
+    <app-header></app-header>
+    
+    <main class="menu-main">
+        <div class="menu-header">
+            <h1>Our Menu</h1>
+            <p>Discover our carefully curated selection of exceptional dishes</p>
+        </div>
+
+        <!-- Category Filter -->
+        <div class="filter-section">
+            <h3>Filter by Category</h3>
+            <div class="filter-buttons">
+                <button
+                class="filter-btn"
+                [class.active] = "selectedCategory === null"
+                (click)="filterByCategory(0)">
+                All
+                </button>
+                
+                @for (category of categories; track category.id) {
+                <button
+                class="filter-btn"
+                [class.active] = "selectedCategory?.id === category.id"
+                (click)="filterByCategory(category.id)"
+                >
+                {{ category.name }}
+                </button>
+                }
+            </div>
+        </div>
+
+        <!-- Dish Grid -->
+        @if (filteredDishes.length > 0) {
+        <div class="dishes-grid">
+            @for (dish of filteredDishes; track dish.id) {
+                <div 
+                class="dish-card" 
+                (click)="openDishDetails(dish)">
+                    <div class="dish-image">
+                    <div class="image-placeholder">{{ dish.name.charAt(0) }}</div>
+                        <div class="dish-badges">
+                            @if (dish.isVegetarian) {
+                                <span class=" badge vegetarian">V</span>
+                            } 
+                            @if (dish.isGlutenFree) {
+                                <span class=" badge gluten-free">GF</span>
+                            }
+                        </div>
+                    </div>
+                    <div class="dish-content">
+                        <h3>{{ dish.name }}</h3>
+                        <p class="dish-description">{{ dish.description }}</p>
+                        <div class="dish-footer">
+                            <span class="dish-price">\${{ dish.price }}</span>
+                            <span class="dish-category">{{ dish.category }}</span> 
+                        </div>    
+                    </div>
+                </div>
+            }
+        </div>
+        }
+
+        <!-- Loading State -->
+        @if (filteredDishes.length === 0 && loading) {
+            <div class="loading">
+                <div class="loading-spinner"></div>
+            <p>Loading delocious dishes..</p>
+            </div>
+           
+        }
+
+        <!-- Empty State -->
+        @if (!loading && filteredDishes.length === 0) {
+            <div class="empty-state">
+            <h3>No dishes found</h3>
+            <p>Try selecting a different category or check back later.</p>
+            </div>
+        }
+    </main>
+
+    <!--Dish Detail Modal-->
+    @if (selectedDish) {
+
+    }
+
+    <app-footer></app-footer>
+</div>

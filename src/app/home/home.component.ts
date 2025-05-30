@@ -1,15 +1,15 @@
-import { Component, input, OnInit } from '@angular/core';
-import { HeaderComponent } from "../shared/header/header.component";
+import { Component, OnInit } from '@angular/core';
 import { FooterComponent } from "../shared/footer/footer.component";
-import { RestaurantInfo } from '../models/restaurant_info';
+import { RestaurantInfo } from '../shared/models/restaurant_info';
+import { RouterModule} from '@angular/router';
 
 @Component({
-  selector: 'app-hero',
-  imports: [HeaderComponent, FooterComponent],
-  templateUrl: './hero.component.html',
-  styleUrl: './hero.component.css'
+  selector: 'app-home',
+  imports: [FooterComponent, RouterModule],
+  templateUrl: './home.component.html',
+  styleUrl: './home.component.css'
 })
-export class HeroComponent implements OnInit {
+export class HomeComponent implements OnInit {
   restaurantInfo: RestaurantInfo | null = null;
 
   ngOnInit(): void {
