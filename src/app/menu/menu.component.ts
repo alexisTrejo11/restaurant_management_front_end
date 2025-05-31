@@ -6,10 +6,11 @@ import { MenuService } from './menu.service';
 import { DishDetailComponent } from './dish-detail/dish-detail.component';
 import { FilterComponent } from "./filter/filter.component";
 import { DishGridComponent } from './dish-grid/dish-grid.component';
+import { FormGroupComponent } from '../shared/form-group/form-group.component';
 
 @Component({
   selector: 'app-menu',
-  imports: [HeaderComponent, FooterComponent, DishDetailComponent, FilterComponent, FilterComponent, DishGridComponent],
+  imports: [HeaderComponent, FooterComponent, DishDetailComponent, FilterComponent, FormGroupComponent, DishGridComponent],
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.css'
 })

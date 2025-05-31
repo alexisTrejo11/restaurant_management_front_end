@@ -1,0 +1,12 @@
+.form-section {
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    color: #2c1810;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #d4a574;
+    padding-bottom: 0.5rem;
+    margin: 0 0 1rem 0;
+}

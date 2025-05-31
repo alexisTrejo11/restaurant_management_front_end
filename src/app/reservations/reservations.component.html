@@ -1,1 +1,36 @@
-<p>reservations works!</p>
+<div class="reservation-container">
+<app-header></app-header>
+    <main class="reservation-main">
+        <div class="reservation-header">
+            <h1>Request Your Reservation</h1>
+            <p>Book your table for an unforgettable dining experience</p>
+        </div>
+
+        <!--TODO:Validate Fields-->
+        <div class="form-container">
+            <form action="" class="reservation-form">
+                <app-personal-information />
+            
+                <app-reservation-details 
+                [customerCapacitiesAllowed]="getGuestNumbers()" 
+                [reservationHoursAllowed]="getScheduleByHours()"
+                />
+            
+                <app-reservation-special-requests />
+
+                <div class="form-actions">
+                    <button
+                    type="submit"
+                    class="submit-btn"
+                    >
+                        @if (!isSubmiting) {
+                            <span>Make Your Reservation</span>
+                        } @else {
+                            <span>Submitting...</span>
+                        }
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+</div>

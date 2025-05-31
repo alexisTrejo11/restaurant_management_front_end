@@ -1,0 +1,63 @@
+.reservation-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.reservation-form {
+    padding: 2rem;
+}
+
+.reservation-main {
+    flex: 1;
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.reservation-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.reservation-header h1{
+    font-size: 3rem;
+    font-family: 'Playfair Display', serif;
+    color: #2c1810;
+    margin-bottom: 1rem;
+}
+
+.reservation-header p {
+    font-size: 1.2rem;
+    color: #6b5b4c;
+}
+
+.form-container {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.form-actions {
+    text-align: center;
+    margin-top: 2rem;
+    margin: 1.2rem 0;
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, #d4a574 0%, #b8956a 100%);    color: white;
+    border: none;
+    padding: 1.2rem 3rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(212, 165, 116, 0.3);
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(212, 165, 116, 0.4);
+}

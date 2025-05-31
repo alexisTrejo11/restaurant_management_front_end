@@ -1,0 +1,32 @@
+<app-form-section [title]="title">
+    <div class="form-row">
+        <app-form-group>
+        <label for="date">Date *</label>
+        <input 
+            type="date" 
+            id="date" 
+            formControlName="date" 
+            >
+        </app-form-group>
+
+        <app-form-group>
+            <label for="time">Time *</label>
+            <select name="" id="">
+                <option value="">Select time</option>
+                @for (hour of reservationHoursAllowed(); track $index) {
+                    <option value="{{hour}}">{{ hour }}:00 PM</option>
+                }
+            </select> 
+        </app-form-group>
+
+    <app-form-group>
+            <label for="guests">Number of Guests *</label>
+            <select form="" id="guests">
+            <option value="">Select guests</option>
+            @for (capacity of customerCapacitiesAllowed(); track $index) {
+                <option [value]="capacity">{{ capacity }} Guests</option>
+            }
+            </select> 
+        </app-form-group>
+    </div>
+</app-form-section>
