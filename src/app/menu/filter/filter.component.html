@@ -1,0 +1,21 @@
+<div class="filter-section">
+    <h3>Filter by Category</h3>
+    <div class="filter-buttons">
+        <button
+        class="filter-btn"
+        [class.active] = "selectedCategory === null"
+        (click)="OnSelectCategory(0)">
+        All
+        </button>
+        
+        @for (category of categories(); track category.id) {
+        <button
+        class="filter-btn"
+        [class.active] = "selectedCategory?.id === category.id"
+        (click)="OnSelectCategory(category.id)"
+        >
+        {{ category.name }}
+        </button>
+        }
+    </div>
+</div>

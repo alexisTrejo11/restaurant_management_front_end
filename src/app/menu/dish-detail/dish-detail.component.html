@@ -1,0 +1,28 @@
+<div class="model-overlay" (click)="onCloseModal()">
+    <div class="modal-content">
+        <button class="modal-close" (click)="onCloseModal()">&times;</button>
+          <div class="modal-header">
+            <div class="modal-image">
+              <div class="image-placeholder large">{{ dish().name.charAt(0) }}</div>
+            </div>
+        <div class="modal-info">
+            <h2>{{ dish().name }}</h2>
+            <p class="modal-category"> {{ dish().category }} </p>
+            <p class="modal-price"> {{ dish().price }} </p>
+            <div class="modal-badges">
+            @if (dish().isVegetarian) {
+                <span class="badge vegetarian">Vegetarian</span>
+            }
+            @if (dish().isGlutenFree) {
+                <span class="badge gluten-free">Gluten Free</span>
+            }
+            </div>
+        </div>
+        <div class="modal-body">
+            <p class="modal-description">{{ dish().description }}</p>
+            @for (ingredient of dish().ingredients; track $index) {
+                {{ ingredient }}
+            }
+        </div>
+            </div>
+        </div>

@@ -1,0 +1,72 @@
+.dishes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.dish-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.dish-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(212, 165, 116, 0.2);
+}
+
+.image-placeholder {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #d4a574 0%, #b8956a 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.image-placeholder.large {
+    width: 150px;
+    height: 150px;
+    font-size: 3rem;
+}
+
+.dish-badges {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    }
+
+.badge {
+    padding: 0.3rem 0.6rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: white;
+}
+
+.badge.vegetarian {
+    background: #4caf50;
+}
+
+.badge.gluten-free {
+    background: #ff9800;
+}
+
+.dish-content {
+    padding: 1.5rem;
+}
+
+.dish-content h3 {
+    color: #2c1810;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+

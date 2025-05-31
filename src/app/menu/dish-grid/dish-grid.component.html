@@ -1,0 +1,27 @@
+ <div class="dishes-grid">
+            @for (dish of dishes(); track dish) {
+                <div 
+                class="dish-card" 
+                (click)="onOpenDishDetail(dish)">
+                    <div class="dish-image">
+                    <div class="image-placeholder">{{ dish.name.charAt(0) }}</div>
+                        <div class="dish-badges">
+                            @if (dish.isVegetarian) {
+                                <span class=" badge vegetarian">V</span>
+                            } 
+                            @if (dish.isGlutenFree) {
+                                <span class=" badge gluten-free">GF</span>
+                            }
+                        </div>
+                    </div>
+                    <div class="dish-content">
+                        <h3>{{ dish.name }}</h3>
+                        <p class="dish-description">{{ dish.description }}</p>
+                        <div class="dish-footer">
+                            <span class="dish-price">\${{ dish.price }}</span>
+                            <span class="dish-category">{{ dish.category }}</span> 
+                        </div>    
+                    </div>
+                </div>
+            }
+        </div>
